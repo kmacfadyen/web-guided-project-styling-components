@@ -28,10 +28,18 @@ export default function App() {
 
   return (
     <div className='container'>
+      {/** const div = document.createElement('div');
+       * div.classList.add('container');
+       */}
       <h1>My friends:</h1>
       {
-        friends.map(fr => {
-          return <Friend key={fr.id} info={fr} action={openDetails} />
+        friends.map(fr, idx => {
+          return <Friend
+                   key={fr.id}
+                   info={fr} 
+                   action={openDetails}
+                   besty={idx % 2 === 0}
+                   />
         })
       }
       {
